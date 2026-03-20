@@ -1,0 +1,76 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model ProdutoPersonalizado {
+  id        Int      @id @default(autoincrement())
+  tipoPeca  String
+  modelo    String
+  recorte   String
+  cor       String
+  tecido    String
+  tamanho   String
+  createdAt DateTime @default(now())
+
+  pedidos   Pedido[]
+  criacao   Criacao[]
+}
+model Avatar {
+  id         Int      @id @default(autoincrement())
+  altura     Float
+  peso       Float
+  tipoFisico String?
+  createdAt  DateTime @default(now())
+
+  pedidos    Pedido[]
+}
+model Pedido {
+  id                     Int      @id @default(autoincrement())
+  endereco               String
+  formaPagamento         String
+  status                 String   @default("PENDENTE")
+
+  produtoPersonalizadoId Int
+  avatarId               Int?
+
+  produtoPersonalizado   ProdutoPersonalizado @relation(fields: [produtoPersonalizadoId], references: [id])
+  avatar                 Avatar?              @relation(fields: [avatarId], references: [id])
+
+  createdAt              DateTime @default(now())
+}
+model Criacao {
+  id                     Int      @id @default(autoincrement())
+  nome                   String?
+  
+  produtoPersonalizadoId Int
+
+  produtoPersonalizado   ProdutoPersonalizado @relation(fields: [produtoPersonalizadoId], references: [id])
+
+  createdAt              DateTime @default(now())
+}
+model Material {
+  id            Int      @id @default(autoincrement())
+  nome          String
+  tipo          String   // tecido, cor, modelo, recorte
+  disponibilidade Boolean @default(true)
+  createdAt     DateTime @default(now())
+}
+model Usuario {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  email     String   @unique
+  senha     String
+  telefone  String?
+  endereco  String?
+  createdAt DateTime @default(now())
+}
