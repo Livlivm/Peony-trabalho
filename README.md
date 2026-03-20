@@ -104,5 +104,6 @@ peony-atelie/
 
 ## Autoria
 
-Projeto desenvolvido por alunos do SENAI.
-Read.me desenvolvido por Eduarda Massaro e Lívia Morais
+- Projeto desenvolvido por alunos do SENAI.
+
+- READ.ME desenvolvido por Eduarda Massaro e Lívia Morais
