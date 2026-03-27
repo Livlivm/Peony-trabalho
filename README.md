@@ -102,6 +102,11 @@ peony-atelie/
 
 ---
 
+## Figma
+- Mobile: https://www.figma.com/proto/MDJ93eXs8ijaADC4dXHHpE/Peony-Atelie-Celular?node-id=2-11&p=f&t=6cytH8hGCmRRQMd4-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1
+
+- Desktop: https://www.figma.com/proto/0tyeL0TqsUxc5UKYLyBphc/Peony-Atelie?node-id=6-2&t=lDu9mJMIUGDnYUuJ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=6%3A2
+
 ## Autoria
 
 - Projeto desenvolvido por alunos do SENAI.
